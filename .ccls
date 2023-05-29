@@ -1,0 +1,5 @@
+-Wall
+-Werror
+-Wextra
+-I./include/
+-I./lib/Libft/header
