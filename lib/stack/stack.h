@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/23 16:28:54 by makurz            #+#    #+#             */
-/*   Updated: 2023/05/30 16:16:25 by work             ###   ########.fr       */
+/*   Created: 2023/05/30 16:14:19 by work              #+#    #+#             */
+/*   Updated: 2023/05/30 16:32:54 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef STACK_H
+# define STACK_H
 
-# include <stdlib.h>
+typedef struct s_circle
+{
+	int					data;
+	int					index;
+	struct s_circle		*next;
+	struct s_circle		*previous;
+}	t_circle;
 
+t_circle	*new_node(int data);
 
 #endif
