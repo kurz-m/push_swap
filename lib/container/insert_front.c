@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   insert_front.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/23 16:28:54 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/01 14:14:54 by work             ###   ########.fr       */
+/*   Created: 2023/05/30 16:30:53 by work              #+#    #+#             */
+/*   Updated: 2023/05/30 16:38:22 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "stack.h"
+#include "libft.h"
+#include "push_swap.h"
 
-# include <stdlib.h>
-
-#endif
+void	insert_front(t_circle **lst, t_circle *node)
+{
+	if (lst == NULL || node == NULL)
+		return ;
+	
+}
