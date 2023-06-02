@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.h                                            :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 16:14:19 by work              #+#    #+#             */
-/*   Updated: 2023/05/30 16:32:54 by work             ###   ########.fr       */
+/*   Updated: 2023/06/02 09:12:17 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@ typedef struct s_circle
 	struct s_circle		*previous;
 }	t_circle;
 
+void		append(t_circle **head, t_circle *new_node);
 t_circle	*new_node(int data);
+void		prepend(t_circle **head, t_circle *new_node);
+void		revrotate(t_circle **head);
+void		rotate(t_circle **head);
+t_circle	*swap(t_circle *stack);
 
 #endif

@@ -3,4 +3,4 @@
 -Wextra
 -I./include/
 -I./lib/Libft/header
--I./lib/stack
+-I./src/utils/

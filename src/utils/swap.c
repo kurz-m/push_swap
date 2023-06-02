@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_stack.c                                     :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 14:02:40 by work              #+#    #+#             */
-/*   Updated: 2023/06/01 14:13:16 by work             ###   ########.fr       */
+/*   Created: 2023/06/02 09:00:20 by work              #+#    #+#             */
+/*   Updated: 2023/06/02 09:09:06 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
-#include "libft.h"
+#include "utils.h"
 #include "push_swap.h"
 
-void	create_stack(t_circle **head, t_circle *new_node)
+t_circle	*swap(t_circle *stack)
 {
 	t_circle	*tmp;
 
-	if (head == NULL)
-	{
-		*head = new_node;
-		(*head)->next = new_node;
-		(*head)->previous = new_node;
-		return ;
-	}
-	tmp = (*head)->previous;
-	(*head)->previous = new_node;
-	tmp->next = new_node;
-	new_node->previous = tmp;
-	new_node->next = *head;
+	if (stack == NULL)
+		// TODO: empty struct error handling
+		exit(1);
+	if (stack->next == NULL)
+		// TODO: empty struct error handling
+		exit(1);
+	tmp = stack->next;
+	tmp->next->previous = stack;
+	stack->next = tmp->next;
+	tmp->next = stack;
+	tmp->previous = stack->previous;
+	tmp->previous->next = tmp;
+	stack->previous = tmp;
+	return (tmp);
 }

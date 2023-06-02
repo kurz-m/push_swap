@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   insert_front.c                                     :+:      :+:    :+:   */
+/*   revrotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 16:30:53 by work              #+#    #+#             */
-/*   Updated: 2023/05/30 16:38:22 by work             ###   ########.fr       */
+/*   Created: 2023/06/02 08:52:18 by work              #+#    #+#             */
+/*   Updated: 2023/06/02 08:58:05 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stack.h"
-#include "libft.h"
+#include "utils.h"
 #include "push_swap.h"
 
-void	insert_front(t_circle **lst, t_circle *node)
+void	revrotate(t_circle **head)
 {
-	if (lst == NULL || node == NULL)
-		return ;
-	
+	if (*head == NULL)
+		// TODO: error handling
+		exit(1);
+	if ((*head)->previous == NULL)
+		// TODO: error handling
+		exit(1);
+	*head = (*head)->previous;
 }
+

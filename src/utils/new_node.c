@@ -6,13 +6,13 @@
 /*   By: makurz <dumba@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 11:52:21 by makurz            #+#    #+#             */
-/*   Updated: 2023/05/30 16:32:46 by work             ###   ########.fr       */
+/*   Updated: 2023/06/02 08:51:29 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "utils.h"
 #include "push_swap.h"
 #include "libft.h"
-#include "stack.h"
 
 t_circle	*new_node(int data)
 {
