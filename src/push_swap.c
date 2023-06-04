@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 14:28:45 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/03 21:33:07 by work             ###   ########.fr       */
+/*   Updated: 2023/06/04 15:48:37 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,32 @@
 #include "push_swap.h"
 #include "utils.h"
 
-int	main(int argc, char **argv)
+// int	main(int argc, char **argv)
+int	main(void)
 {
-	// t_container		*stack;
-	t_oop			stack;
+	t_oop			*stack_a;
+	t_oop			*stack_b;
 
-	stack.append = append;
-	(void) argv;
-
-	if (argc < 2)
-		return (1);
-	// stack->stack_a = parse_input(argc, argv);
+	stack_a = ft_calloc(1, sizeof(t_oop));
+	if (NULL == stack_a)
+		return(write(2, "Error\n", 6), EXIT_FAILURE);
+	stack_b = ft_calloc(1, sizeof(t_oop));
+	if (NULL == stack_b)
+		return(free(stack_a), write(2, "Error\n", 6), EXIT_FAILURE);
+	init_stacks(&stack_a, &stack_b);
+	stack_a->append(stack_a, new_node(4));
+	stack_a->append(stack_a, new_node(10));
+	stack_a->append(stack_a, new_node(-3));
+	stack_a->append(stack_a, new_node(2));
+	stack_a->append(stack_a, new_node(15));
+	stack_a->print(stack_a);
+	ft_printf("test\n");
+	stack_a->pop(stack_a);
+	stack_a->print(stack_a);
+	stack_a->rotate(stack_a);
+	ft_printf("test\n");
+	stack_a->print(stack_a);
+	free(stack_a);
+	free(stack_b);
 	return (EXIT_SUCCESS);
 }

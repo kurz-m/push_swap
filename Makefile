@@ -5,20 +5,23 @@ NAME := push_swap
 #############################################################################
 #############################################################################
 
-CC := cc
-CFLAGS ?= -Wextra -Wall -Werror -O3 --MMD -MP
+CC := gcc
+CFLAGS ?= -Wextra -Wall -Werror -MMD -MP -g3
 LIBFT := ./lib/Libft
-HEADER := -I./include -I$(LIBFT)/header
+HEADERS := -I./include -I$(LIBFT)/header
+LIBFT_NAME := $(LIBFT)/lib/libft.a
 
 #############################################################################
 #############################################################################
 #############################################################################
 
 VPATH := src src/utils src/parse src/sort
-SRC_UTILS := append.c new_node.c prepend.c revrotate.c rotate.c swap.c
-SRC_PARSE := append.c new_node.c prepend.c revrotate.c rotate.c swap.c
-SRC_SORT := append.c new_node.c prepend.c revrotate.c rotate.c swap.c
-SRCS := $(SRC_UTILS) $(SRC_SORT) $(SRC_PARSE)
+SRC = push_swap.c
+SRC_UTILS := init.c insert.c new_node.c pop.c print.c rotate.c swap.c
+SRC_PARSE := 
+SRC_SORT := 
+SRCS := $(SRC) $(SRC_UTILS) $(SRC_SORT) $(SRC_PARSE)
+# SRCS := $(SRC)
 
 #############################################################################
 #############################################################################
@@ -36,13 +39,16 @@ all: $(NAME)
 $(NAME): $(OBJS) $(LIBFT_NAME)
 	@echo $(Y)Compiling [$(NAME)]...$(X)
 	@printf $(UP)$(CUT)
-	@$(CC) $(OBJS) $(LIBS) -o $(NAME)
+	@$(CC) $(OBJS) $(LIBFT_NAME) -o $(NAME)
 	@echo $(G)Finished"  "[$(NAME)]...$(X)
 
 $(OBJ_DIR)/%.o: %.c
 	@echo $(Y)Compiling [$@]...$(X)
 	@mkdir -p _obj
 	@$(CC) $(CFLAGS) -c $< $(HEADERS) -o $@
+
+$(LIBFT_NAME):
+	$(MAKE) -C $(LIBFT)
 
 #############################################################################
 #############################################################################
@@ -72,6 +78,7 @@ fclean: clean
 		echo $(G)Cleaned!$(X); \
 	fi
 
+re: fclean all
 #############################################################################
 #############################################################################
 #############################################################################
