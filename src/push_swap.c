@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 14:28:45 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/04 16:21:39 by work             ###   ########.fr       */
+/*   Updated: 2023/06/04 16:22:50 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int	main(void)
 	stack_b->print(stack_b);
 	ft_printf("test\n");
 	stack_a->print(stack_a);
+	stack_a->deconstructor(stack_a);
+	stack_b->deconstructor(stack_b);
 	free(stack_a);
 	free(stack_b);
 	return (EXIT_SUCCESS);
