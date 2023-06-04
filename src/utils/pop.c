@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   revrotate.c                                        :+:      :+:    :+:   */
+/*   pop.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 08:52:18 by work              #+#    #+#             */
-/*   Updated: 2023/06/02 08:58:05 by work             ###   ########.fr       */
+/*   Created: 2023/06/04 15:02:47 by work              #+#    #+#             */
+/*   Updated: 2023/06/04 15:44:40 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "libft.h"
 #include "push_swap.h"
+#include "utils.h"
 
-void	revrotate(t_circle **head)
+void	pop(t_oop *self)
 {
-	if (*head == NULL)
-		// TODO: error handling
-		exit(1);
-	if ((*head)->previous == NULL)
-		// TODO: error handling
-		exit(1);
-	*head = (*head)->previous;
-}
+	t_circle	*tmp_top;
 
+	tmp_top = self->top->next;
+	self->top->next = tmp_top->next;
+	self->top->previous->next = tmp_top;
+	self->top = tmp_top;
+}

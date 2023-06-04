@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   prepend.c                                          :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 16:30:53 by work              #+#    #+#             */
-/*   Updated: 2023/06/02 08:50:20 by work             ###   ########.fr       */
+/*   Created: 2023/06/04 15:12:33 by work              #+#    #+#             */
+/*   Updated: 2023/06/04 15:25:49 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
-#include "libft.h"
-#include "push_swap.h"
 
-void	prepend(t_circle **head, t_circle *new_node)
+void	init_stacks(t_oop **stack_a, t_oop **stack_b)
 {
-	t_circle	*tmp;
+	(*stack_a)->constructor = construct;
+	(*stack_a)->constructor(*stack_a);
+	(*stack_b)->constructor = construct;
+	(*stack_b)->constructor(*stack_b);
+}
 
-	if (head == NULL)
-	{
-		*head = new_node;
-		(*head)->next = new_node;
-		(*head)->previous = new_node;
-		return ;
-	}
-	tmp = (*head)->previous;
-	(*head)->previous = new_node;
-	tmp->next = new_node;
-	new_node->previous = tmp;
-	new_node->next = *head;
-	*head = new_node;
+void	construct(t_oop *self)
+{
+	self->pop = pop;
+	self->append = append;
+	self->prepend = prepend;
+	self->rotate = rotate;
+	self->revrotate = revrotate;
+	self->swap = swap;
+	self->print = print;
 }

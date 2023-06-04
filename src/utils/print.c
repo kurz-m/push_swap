@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/04 14:56:09 by work              #+#    #+#             */
-/*   Updated: 2023/06/04 14:58:24 by work             ###   ########.fr       */
+/*   Created: 2023/06/04 15:15:17 by work              #+#    #+#             */
+/*   Updated: 2023/06/04 15:16:47 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
-#include "push_swap.h"
+#include "libft.h"
+#include <stdio.h>
 
-void	rotate(t_oop *self)
+void	print(t_oop *self)
 {
-	if (self->top == NULL)
-		// TODO: error handling
-		exit(1);
-	if (self->top->next == NULL)
-		// TODO: error handling
-		exit(1);
-	self->top = self->top->next;
-}
+	t_circle	*current;
 
-void	revrotate(t_oop *self)
-{
-	if (self->top == NULL)
-		// TODO: error handling
-		exit(1);
-	if (self->top->previous == NULL)
-		// TODO: error handling
-		exit(1);
-	self->top = self->top->previous;
+	current = self->top;
+	while (1)
+	{
+		printf("Number: %i\n", current->data);
+		current = current->next;
+		if (current == self->top)
+			break ;
+	}
 }

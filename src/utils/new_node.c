@@ -6,7 +6,7 @@
 /*   By: makurz <dumba@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 11:52:21 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/02 08:51:29 by work             ###   ########.fr       */
+/*   Updated: 2023/06/04 15:01:36 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_circle	*new_node(int data)
 	t_circle	*new_node;
 
 	new_node = NULL;
-	new_node = (t_circle *) malloc(sizeof(t_circle));
+	new_node = (t_circle *) ft_calloc(1, sizeof(t_circle));
 	if (new_node == NULL)
 		return (NULL);
 	new_node->data = data;
