@@ -6,7 +6,7 @@
 /*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 15:12:33 by work              #+#    #+#             */
-/*   Updated: 2023/06/04 16:21:17 by work             ###   ########.fr       */
+/*   Updated: 2023/06/04 16:28:58 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	construct_stacks(t_oop **stack_a, t_oop **stack_b)
 
 void	construct(t_oop *self)
 {
+	self->top = NULL;
 	self->deconstructor = desconstruct;
 	self->pop = pop;
 	self->append = append;
