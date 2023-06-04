@@ -6,7 +6,7 @@
 /*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 16:14:19 by work              #+#    #+#             */
-/*   Updated: 2023/06/04 16:21:29 by work             ###   ########.fr       */
+/*   Updated: 2023/06/04 20:01:07 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_oop
 	t_circle	*top;
 	void		(*constructor)(struct s_oop *);
 	void		(*deconstructor)(struct s_oop *);
+	void		(*indexing)(struct s_oop *);
 	void		(*pop)(struct s_oop *);
 	void		(*append)(struct s_oop *, t_circle *new_node);
 	void		(*prepend)(struct s_oop *, t_circle *new_node);
@@ -38,6 +39,7 @@ typedef struct s_oop
 // function for oop
 void		construct(t_oop *self);
 void		desconstruct(t_oop *self);
+void		indexing(t_oop *self);
 void		pop(t_oop *self);
 void		append(t_oop *self, t_circle *new_node);
 void		prepend(t_oop *self, t_circle *new_node);
