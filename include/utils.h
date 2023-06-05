@@ -6,7 +6,7 @@
 /*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 16:14:19 by work              #+#    #+#             */
-/*   Updated: 2023/06/05 20:30:45 by work             ###   ########.fr       */
+/*   Updated: 2023/06/05 22:59:55 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,6 @@ typedef struct s_oop
 	void		(*swap)(struct s_oop *);
 	void		(*print)(struct s_oop *);
 }	t_oop;
-
-typedef struct s_container
-{
-	t_oop	*stack_a;
-	t_oop	*stack_b;
-}	t_container;
 
 // function for oop
 void		construct(t_oop *self);

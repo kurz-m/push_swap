@@ -16,9 +16,9 @@ LIBFT_NAME := $(LIBFT)/lib/libft.a
 #############################################################################
 
 VPATH := src src/utils src/parse src/sort
-SRC = push_swap.c
+SRC = push_swap.c error_handling.c
 SRC_UTILS := init.c insert.c new_node.c pop.c print.c rotate.c swap.c
-SRC_PARSE := 
+SRC_PARSE := parse_input.c
 SRC_SORT := 
 SRCS := $(SRC) $(SRC_UTILS) $(SRC_SORT) $(SRC_PARSE)
 # SRCS := $(SRC)
