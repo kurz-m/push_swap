@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 14:28:45 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/05 16:12:19 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/05 18:17:05 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ int	main(int argc, char **argv)
 	parse_input(&stack_a, argc - 1, argv);
 	stack_b = ft_calloc(1, sizeof(t_oop));
 	if (NULL == stack_b)
-		return(free(stack_a), write(2, "Error\n", 6), EXIT_FAILURE);
+	{
+		stack_a->deconstructor(&stack_a);
+		return(write(2, "Error\n", 6), EXIT_FAILURE);
+	}
 	construct_stack(&stack_b);
 	stack_a->deconstructor(&stack_a);
 	stack_b->deconstructor(&stack_b);

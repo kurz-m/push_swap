@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 13:30:00 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/05 16:35:12 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/05 18:22:28 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,11 @@ int	parse_input(t_oop **stack, int argc, char **argv)
 			error_handling(stack, PARSE);
 		while (nbs[++j] != NULL)
 		{
+			if (valid_input(nbs[j]))
+				(*stack)->append(*stack, new_node(ft_atoi(nbs[j])));
+			else
+				error_handling(stack, PARSE);
+
 		}
 		ft_arrfree(nbs);
 	}
