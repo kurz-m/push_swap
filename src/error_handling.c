@@ -6,13 +6,19 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 16:25:31 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/02 16:39:20 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/05 16:15:28 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "libft.h"
 
-void	error_handling(int error_code)
+void	error_handling(t_oop **stack, int error_code)
 {
-	if (error_code == USAGE)
-		write(2, "Usage: ./push_swap 
+	if (error_code == PARSE)
+	{
+		(*stack)->deconstructor(stack);
+		write(2, "Error\n", 6);
+		exit(EXIT_FAILURE);
+	}
+}
