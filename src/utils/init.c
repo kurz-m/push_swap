@@ -6,7 +6,7 @@
 /*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 15:12:33 by work              #+#    #+#             */
-/*   Updated: 2023/06/05 16:11:35 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/05 18:21:51 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void	desconstruct(t_oop **self)
 	t_circle	*current;
 	t_circle	*tmp;
 
+	if ((*self)->top == NULL)
+		return ;
 	current = (*self)->top;
 	while (1)
 	{
