@@ -6,19 +6,17 @@
 /*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 15:12:33 by work              #+#    #+#             */
-/*   Updated: 2023/06/04 20:09:55 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/05 16:11:35 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 #include "push_swap.h"
 
-void	construct_stacks(t_oop **stack_a, t_oop **stack_b)
+void	construct_stack(t_oop **stack)
 {
-	(*stack_a)->constructor = construct;
-	(*stack_a)->constructor(*stack_a);
-	(*stack_b)->constructor = construct;
-	(*stack_b)->constructor(*stack_b);
+	(*stack)->constructor = construct;
+	(*stack)->constructor(*stack);
 }
 
 void	construct(t_oop *self)
@@ -35,20 +33,21 @@ void	construct(t_oop *self)
 	self->print = print;
 }
 
-void	desconstruct(t_oop *self)
+void	desconstruct(t_oop **self)
 {
 	t_circle	*current;
 	t_circle	*tmp;
 
-	current = self->top;
+	current = (*self)->top;
 	while (1)
 	{
 		tmp = current;
 		current = current->next;
 		free(tmp);
-		if (current == self->top)
+		if (current == (*self)->top)
 			break ;
 	}
+	free(*self);
 }
 
 void	indexing(t_oop *self)
@@ -57,6 +56,8 @@ void	indexing(t_oop *self)
 	t_circle	*run;
 
 	current = self->top;
+	if (NULL == current)
+		return ;
 	while (1)
 	{
 		run = self->top;

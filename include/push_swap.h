@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 16:28:54 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/03 13:41:01 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/05 16:31:29 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,12 @@
 
 # include <stdlib.h>
 # include "utils.h"
+# include <limits.h>
 
-// Defines for error handling
-# define USAGE 42
+// Defines
+# define PARSE 42
+# define TRUE 1
+# define FALSE 0
 
 typedef struct s_container
 {
@@ -25,6 +28,7 @@ typedef struct s_container
 	t_circle	**stack_b;
 }	t_container;
 
-t_circle	**parse_input(int argc, char **argv);
+int		parse_input(t_oop **stack, int argc, char **argv);
+void	error_handling(t_oop **stack, int error_code);
 
 #endif
