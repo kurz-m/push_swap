@@ -6,7 +6,7 @@
 /*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 16:14:19 by work              #+#    #+#             */
-/*   Updated: 2023/06/06 13:49:53 by work             ###   ########.fr       */
+/*   Updated: 2023/06/06 18:38:55 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,14 @@ typedef struct s_oop
 	void		(*revrotate)(struct s_oop *);
 	void		(*swap)(struct s_oop *);
 	void		(*print)(struct s_oop *);
+	void		(*print_index)(struct s_oop *);
 }	t_oop;
+
+typedef struct s_container
+{
+	t_oop	*stack_a;
+	t_oop	*stack_b;
+}	t_container;
 
 // function for oop
 void		construct(t_oop *self);
@@ -49,15 +56,11 @@ void		rotate(t_oop *self);
 void		revrotate(t_oop *self);
 void		swap(t_oop *self);
 void		print(t_oop *self);
+void		print_index(t_oop *self);
 t_circle	*new_node(int data);
 void		construct_stack(t_oop **stack);
 
-// void		append(t_circle **head, t_circle *new_node);
-// void		append(t_circle **head, t_circle *new_node);
-// t_circle	*new_node(int data);
-// void		prepend(t_circle **head, t_circle *new_node);
-// void		revrotate(t_circle **head);
-// void		rotate(t_circle **head);
-// t_circle	*swap(t_circle *stack);
+// other utils
+int			count_elements(t_oop *self);
 
 #endif

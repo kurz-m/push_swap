@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 14:28:45 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/06 16:32:17 by work             ###   ########.fr       */
+/*   Updated: 2023/06/06 18:29:11 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,12 @@ int	main(int argc, char **argv)
 		return (write(2, "Error\n", 6), EXIT_FAILURE);
 	construct_stack(&container.stack_a);
 	parse_input(&container.stack_a, argc - 1, argv);
-	container.stack_a->print(container.stack_a);
 	container.stack_b = ft_calloc(1, sizeof(t_oop));
 	if (NULL == container.stack_b)
 		return (container.stack_a->deconstructor(&container.stack_a), \
 				write(2, "Error\n", 6), EXIT_FAILURE);
 	construct_stack(&container.stack_b);
-	if (check_sorted(container.stack_a) == TRUE)
+	if (check_sorted(container.stack_a) == FALSE)
 		ft_printf("sorted\n");
 	container_cleanup(&container);
 	return (EXIT_SUCCESS);

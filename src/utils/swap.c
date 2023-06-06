@@ -6,7 +6,7 @@
 /*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 09:00:20 by work              #+#    #+#             */
-/*   Updated: 2023/06/04 15:00:54 by work             ###   ########.fr       */
+/*   Updated: 2023/06/06 18:35:12 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,9 @@ void	swap(t_oop *self)
 	t_circle	*tmp;
 
 	if (self->top == NULL)
-		// TODO: empty struct error handling
-		exit(1);
+		error_handling(&self, MOVEMENT);
 	if (self->top->next == NULL)
-		// TODO: empty struct error handling
-		exit(1);
+		error_handling(&self, MOVEMENT);
 	tmp = self->top->next;
 	tmp->next->previous = self->top;
 	self->top->next = tmp->next;

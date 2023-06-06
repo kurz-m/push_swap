@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 16:25:31 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/06 11:22:48 by work             ###   ########.fr       */
+/*   Updated: 2023/06/06 18:34:39 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	error_handling(t_oop **stack, int error_code)
 {
-	if (error_code == PARSE)
+	if (error_code == PARSE || error_code == MOVEMENT)
 	{
 		(*stack)->deconstructor(stack);
 		free((*stack));
