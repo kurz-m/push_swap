@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 16:28:54 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/06 19:24:58 by work             ###   ########.fr       */
+/*   Updated: 2023/06/06 22:18:53 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,35 @@
 # endif
 
 // Defines
-# define PARSE 42
-# define MOVEMENT 21
-# define ALLOC_FAIL 5
 # define TRUE 1
 # define FALSE 0
 
-int		parse_input(t_container *container, int argc, char **argv);
-void	error_handling(t_container *container, int error_code);
-void	parse_error(t_container *container, char **nbs);
+enum e_errors
+{
+	PARSE,
+	MOVEMENT,
+	ALLOC_FAIL,
+};
+
+enum e_movements
+{
+	SWAP_A,
+	SWAP_B,
+	SWAP_ALL,
+	ROT_A,
+	ROT_B,
+	ROT_ALL,
+	RROT_A,
+	RROT_B,
+	RROT_ALL,
+	PUSH_A,
+	PUSH_B,
+};
+
+int		parse_input(t_box *box, int argc, char **argv);
+void	error_handling(t_box *box, int error_code);
+void	parse_error(t_box *box, char **nbs);
 int		check_sorted(t_oop *stack);
-void	container_cleanup(t_container *container);
+void	container_cleanup(t_box *box);
 
 #endif

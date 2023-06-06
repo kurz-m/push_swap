@@ -6,7 +6,7 @@
 /*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 14:58:57 by work              #+#    #+#             */
-/*   Updated: 2023/06/04 14:59:41 by work             ###   ########.fr       */
+/*   Updated: 2023/06/06 22:22:46 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	append(t_oop *self, t_circle *new_node)
 {
 	t_circle	*tmp;
 
+	if (new_node == NULL)
+		return ;
 	if (self->top == NULL)
 	{
 		self->top = new_node;
@@ -37,6 +39,8 @@ void	prepend(t_oop *self, t_circle *new_node)
 {
 	t_circle	*tmp;
 
+	if (new_node == NULL)
+		return ;
 	if (self->top == NULL)
 	{
 		self->top = new_node;

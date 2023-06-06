@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 13:30:00 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/06 19:25:22 by work             ###   ########.fr       */
+/*   Updated: 2023/06/06 20:46:14 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static int	valid_input(t_oop **stack, const char *nb)
 	return (TRUE);
 }
 
-int	parse_input(t_container *container, int argc, char **argv)
+int	parse_input(t_box *box, int argc, char **argv)
 {
 	int		i;
 	char	**nbs;
@@ -73,18 +73,18 @@ int	parse_input(t_container *container, int argc, char **argv)
 		nbs = ft_split(argv[i], ' ');
 		j = -1;
 		if (NULL == nbs[0])
-			parse_error(container, nbs);
+			parse_error(box, nbs);
 		while (nbs[++j] != NULL)
 		{
-			container->a->elements++;
-			if (valid_input(&container->a, nbs[j]))
-				container->a->append(container->a, new_node(ft_atoi(nbs[j])));
+			box->a->elements++;
+			if (valid_input(&box->a, nbs[j]))
+				box->a->append(box->a, new_node(ft_atoi(nbs[j])));
 			else
-				parse_error(container, nbs);
+				parse_error(box, nbs);
 		}
 		ft_arrfree(nbs);
 	}
-	container->a->max = container->a->elements++;
-	container->a->indexing(container->a);
+	box->a->max = box->a->elements++;
+	box->a->indexing(box->a);
 	return (TRUE);
 }
