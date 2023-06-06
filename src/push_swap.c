@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 14:28:45 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/05 23:02:16 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/06 11:19:23 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 int	main(int argc, char **argv)
 {
 	t_container		container;
-	// t_oop			*container.stack_a;
-	// t_oop			*container.stack_b;
 
 	if (argc < 2)
 		return(write(2, "Error\n", 6), EXIT_FAILURE);
@@ -28,15 +26,16 @@ int	main(int argc, char **argv)
 	construct_stack(&container.stack_a);
 	(void) argv;
 	parse_input(&container.stack_a, argc - 1, argv);
+	container.stack_a->print(container.stack_a);
 	container.stack_b = ft_calloc(1, sizeof(t_oop));
 	if (NULL == container.stack_b)
-	{
-		container.stack_a->deconstructor(&container.stack_a);
-		return(write(2, "Error\n", 6), EXIT_FAILURE);
-	}
+		return(container.stack_a->deconstructor(&container.stack_a), \
+				write(2, "Error\n", 6), EXIT_FAILURE);
 	construct_stack(&container.stack_b);
 	container.stack_a->deconstructor(&container.stack_a);
+	free(container.stack_a);
 	container.stack_b->deconstructor(&container.stack_b);
+	free(container.stack_b);
 	return (EXIT_SUCCESS);
 }
 

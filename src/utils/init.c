@@ -6,7 +6,7 @@
 /*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 15:12:33 by work              #+#    #+#             */
-/*   Updated: 2023/06/05 18:21:51 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/06 11:04:15 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	desconstruct(t_oop **self)
 		if (current == (*self)->top)
 			break ;
 	}
-	free(*self);
+	// free(*self);
 }
 
 void	indexing(t_oop *self)
