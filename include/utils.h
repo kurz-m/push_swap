@@ -6,7 +6,7 @@
 /*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 16:14:19 by work              #+#    #+#             */
-/*   Updated: 2023/06/05 22:59:55 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/06 13:49:53 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ typedef struct s_circle
 typedef struct s_oop
 {
 	t_circle	*top;
+	int			elements;
+	int			max;
 	void		(*constructor)(struct s_oop *);
 	void		(*deconstructor)(struct s_oop **);
 	void		(*indexing)(struct s_oop *);

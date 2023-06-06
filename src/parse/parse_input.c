@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 13:30:00 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/06 11:56:55 by work             ###   ########.fr       */
+/*   Updated: 2023/06/06 14:37:11 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	check_num(const char *nb)
 		i++;
 	if (nb[i] == '-' || nb[i] == '+')
 		i++;
-	while(nb[i] != '\0')
+	while (nb[i] != '\0')
 	{
 		if (ft_isdigit(nb[i]) == FALSE)
 			return (FALSE);
@@ -72,10 +72,11 @@ int	parse_input(t_oop **stack, int argc, char **argv)
 	{
 		nbs = ft_split(argv[i], ' ');
 		j = -1;
-		if  (NULL == nbs[0])
+		if (NULL == nbs[0])
 			parse_error(stack, nbs);
 		while (nbs[++j] != NULL)
 		{
+			(*stack)->elements++;
 			if (valid_input(stack, nbs[j]))
 				(*stack)->append(*stack, new_node(ft_atoi(nbs[j])));
 			else
@@ -83,5 +84,6 @@ int	parse_input(t_oop **stack, int argc, char **argv)
 		}
 		ft_arrfree(nbs);
 	}
+	(*stack)->max = (*stack)->elements++;
 	return (TRUE);
 }
