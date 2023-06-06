@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/04 15:15:17 by work              #+#    #+#             */
-/*   Updated: 2023/06/06 16:31:54 by work             ###   ########.fr       */
+/*   Created: 2023/06/06 13:51:52 by work              #+#    #+#             */
+/*   Updated: 2023/06/06 14:30:30 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
 #include "libft.h"
+#include "utils.h"
+#include "push_swap.h"
 
-void	print(t_oop *self)
+int	check_sorted(t_oop *stack)
 {
 	t_circle	*current;
 
-	current = self->top;
-	ft_printf("Number: %i\n", current->data);
-	while (current->next != self->top)
+	current = stack->top;
+	while (1)
 	{
+		if (current->data > current->next->data)
+			return (FALSE);
 		current = current->next;
-		ft_printf("Number: %i\n", current->data);
+		if (current == stack->top->previous)
+			break ;
 	}
+	return (TRUE);
 }
