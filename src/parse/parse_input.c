@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 13:30:00 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/06 17:35:11 by work             ###   ########.fr       */
+/*   Updated: 2023/06/06 19:25:22 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static int	valid_input(t_oop **stack, const char *nb)
 	return (TRUE);
 }
 
-int	parse_input(t_oop **stack, int argc, char **argv)
+int	parse_input(t_container *container, int argc, char **argv)
 {
 	int		i;
 	char	**nbs;
@@ -73,18 +73,18 @@ int	parse_input(t_oop **stack, int argc, char **argv)
 		nbs = ft_split(argv[i], ' ');
 		j = -1;
 		if (NULL == nbs[0])
-			parse_error(stack, nbs);
+			parse_error(container, nbs);
 		while (nbs[++j] != NULL)
 		{
-			(*stack)->elements++;
-			if (valid_input(stack, nbs[j]))
-				(*stack)->append(*stack, new_node(ft_atoi(nbs[j])));
+			container->a->elements++;
+			if (valid_input(&container->a, nbs[j]))
+				container->a->append(container->a, new_node(ft_atoi(nbs[j])));
 			else
-				parse_error(stack, nbs);
+				parse_error(container, nbs);
 		}
 		ft_arrfree(nbs);
 	}
-	(*stack)->max = (*stack)->elements++;
-	(*stack)->indexing(*stack);
+	container->a->max = container->a->elements++;
+	container->a->indexing(container->a);
 	return (TRUE);
 }

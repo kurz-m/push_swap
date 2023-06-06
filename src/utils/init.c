@@ -6,17 +6,19 @@
 /*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 15:12:33 by work              #+#    #+#             */
-/*   Updated: 2023/06/06 18:27:05 by work             ###   ########.fr       */
+/*   Updated: 2023/06/06 19:09:59 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 #include "push_swap.h"
 
-void	construct_stack(t_oop **stack)
+void	construct_container(t_container *container)
 {
-	(*stack)->constructor = construct;
-	(*stack)->constructor(*stack);
+	container->a->constructor = construct;
+	container->a->constructor(container->a);
+	container->b->constructor = construct;
+	container->b->constructor(container->b);
 }
 
 void	construct(t_oop *self)
