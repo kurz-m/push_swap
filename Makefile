@@ -6,7 +6,7 @@ NAME := push_swap
 #############################################################################
 
 CC := gcc
-CFLAGS ?= -Wextra -Wall -Werror -MMD -MP -g3
+CFLAGS ?= -Wextra -Wall -MMD -MP -g3
 LIBFT := ./lib/Libft
 HEADERS := -I./include -I$(LIBFT)/header
 LIBFT_NAME := $(LIBFT)/lib/libft.a

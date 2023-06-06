@@ -6,27 +6,29 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 16:25:31 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/06 18:34:39 by work             ###   ########.fr       */
+/*   Updated: 2023/06/06 19:24:51 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 
-void	error_handling(t_oop **stack, int error_code)
+void	error_handling(t_container *container, int error_code)
 {
-	if (error_code == PARSE || error_code == MOVEMENT)
-	{
-		(*stack)->deconstructor(stack);
-		free((*stack));
-		*stack = NULL;
+	if (DEBUGGING == 0)
 		write(2, "Error\n", 6);
-		exit(EXIT_FAILURE);
-	}
+	else if (error_code == PARSE)
+		write(2, "There was a problem with input parsing.\n", 40);
+	else if (error_code == MOVEMENT)
+		write(2, "There was a problem with a stack movement.\n", 43);
+	else if (error_code == ALLOC_FAIL)
+		write(2, "There was a problem with a memory allocation.\n", 46);
+	container_cleanup(container);
+	exit(EXIT_FAILURE);
 }
 
-void	parse_error(t_oop **stack, char **nbs)
+void	parse_error(t_container *container, char **nbs)
 {
 	ft_arrfree(nbs);
-	error_handling(stack, PARSE);
+	error_handling(container, PARSE);
 }
