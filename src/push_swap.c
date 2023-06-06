@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 14:28:45 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/06 19:14:37 by work             ###   ########.fr       */
+/*   Updated: 2023/06/06 20:47:08 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,63 +14,63 @@
 #include "push_swap.h"
 #include "utils.h"
 
-void	container_cleanup(t_container *container)
+void	container_cleanup(t_box *box)
 {
-	container->a->deconstructor(&container->a);
-	free(container->a);
-	container->a = NULL;
-	container->b->deconstructor(&container->b);
-	free(container->b);
-	container->b = NULL;
+	box->a->deconstructor(&box->a);
+	free(box->a);
+	box->a = NULL;
+	box->b->deconstructor(&box->b);
+	free(box->b);
+	box->b = NULL;
 }
 
 int	main(int argc, char **argv)
 {
-	t_container		container;
+	t_box		box;
 
 	if (argc < 2)
 		return (write(2, "Error\n", 6), EXIT_FAILURE);
-	container.a = ft_calloc(1, sizeof(t_oop));
-	container.b = ft_calloc(1, sizeof(t_oop));
-	if (NULL == container.a || NULL == container.b)
-		error_handling(&container, ALLOC_FAIL);
-	construct_container(&container);
-	parse_input(&container, argc - 1, argv);
-	if (check_sorted(container.a) == FALSE)
+	box.a = ft_calloc(1, sizeof(t_oop));
+	box.b = ft_calloc(1, sizeof(t_oop));
+	if (NULL == box.a || NULL == box.b)
+		error_handling(&box, ALLOC_FAIL);
+	construct_box(&box);
+	parse_input(&box, argc - 1, argv);
+	if (check_sorted(box.a) == FALSE)
 		ft_printf("sorted\n");
-	container_cleanup(&container);
+	container_cleanup(&box);
 	return (EXIT_SUCCESS);
 }
 // int	main(void)
 // {
-// 	t_container		container;
+// 	t_box		box;
 // 	t_circle		*temp;
 // 
-// 	container.a = ft_calloc(1, sizeof(t_oop));
-// 	if (NULL == container.a)
+// 	box.a = ft_calloc(1, sizeof(t_oop));
+// 	if (NULL == box.a)
 // 		return(write(2, "Error\n", 6), EXIT_FAILURE);
-// 	container.b = ft_calloc(1, sizeof(t_oop));
-// 	if (NULL == container.b)
-// 		return(free(container.a), write(2, "Error\n", 6), EXIT_FAILURE);
-// 	construct_stack(&container.a);
-// 	construct_stack(&container.b);
-// 	container.a->append(container.a, new_node(4));
-// 	container.a->append(container.a, new_node(10));
-// 	container.a->append(container.a, new_node(-3));
-// 	container.a->append(container.a, new_node(2));
-// 	container.a->append(container.a, new_node(15));
-// 	container.a->print(container.a);
+// 	box.b = ft_calloc(1, sizeof(t_oop));
+// 	if (NULL == box.b)
+// 		return(free(box.a), write(2, "Error\n", 6), EXIT_FAILURE);
+// 	construct_stack(&box.a);
+// 	construct_stack(&box.b);
+// 	box.a->append(box.a, new_node(4));
+// 	box.a->append(box.a, new_node(10));
+// 	box.a->append(box.a, new_node(-3));
+// 	box.a->append(box.a, new_node(2));
+// 	box.a->append(box.a, new_node(15));
+// 	box.a->print(box.a);
 // 	ft_printf("test\n");
-// 	temp = container.a->top;
-// 	container.a->pop(container.a);
-// 	container.b->prepend(container.b, temp);
-// 	container.a->print(container.a);
-// 	container.a->rotate(container.a);
+// 	temp = box.a->top;
+// 	box.a->pop(box.a);
+// 	box.b->prepend(box.b, temp);
+// 	box.a->print(box.a);
+// 	box.a->rotate(box.a);
 // 	ft_printf("stack_B: ");
-// 	container.b->print(container.b);
+// 	box.b->print(box.b);
 // 	ft_printf("test\n");
-// 	container.a->print(container.a);
-// 	container.a->deconstructor(&container.a);
-// 	container.b->deconstructor(&container.b);
+// 	box.a->print(box.a);
+// 	box.a->deconstructor(&box.a);
+// 	box.b->deconstructor(&box.b);
 // 	return (EXIT_SUCCESS);
 // }

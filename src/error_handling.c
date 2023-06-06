@@ -6,14 +6,14 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 16:25:31 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/06 19:24:51 by work             ###   ########.fr       */
+/*   Updated: 2023/06/06 20:45:55 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 
-void	error_handling(t_container *container, int error_code)
+void	error_handling(t_box *box, int error_code)
 {
 	if (DEBUGGING == 0)
 		write(2, "Error\n", 6);
@@ -23,12 +23,12 @@ void	error_handling(t_container *container, int error_code)
 		write(2, "There was a problem with a stack movement.\n", 43);
 	else if (error_code == ALLOC_FAIL)
 		write(2, "There was a problem with a memory allocation.\n", 46);
-	container_cleanup(container);
+	container_cleanup(box);
 	exit(EXIT_FAILURE);
 }
 
-void	parse_error(t_container *container, char **nbs)
+void	parse_error(t_box *box, char **nbs)
 {
 	ft_arrfree(nbs);
-	error_handling(container, PARSE);
+	error_handling(box, PARSE);
 }

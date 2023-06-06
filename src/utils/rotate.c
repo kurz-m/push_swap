@@ -6,27 +6,29 @@
 /*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 14:56:09 by work              #+#    #+#             */
-/*   Updated: 2023/06/06 19:31:11 by work             ###   ########.fr       */
+/*   Updated: 2023/06/06 21:04:51 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 #include "push_swap.h"
 
-void	rotate(t_oop *self)
+int	rotate(t_oop *self)
 {
 	if (self->top == NULL)
-		error_handling(&self, MOVEMENT);
+		return (FALSE);
 	if (self->top->next == NULL)
-		error_handling(&self, MOVEMENT);
+		return (FALSE);
 	self->top = self->top->next;
+	return (TRUE);
 }
 
-void	revrotate(t_oop *self)
+int	revrotate(t_oop *self)
 {
 	if (self->top == NULL)
-		error_handling(&self, MOVEMENT);
+		return (FALSE);
 	if (self->top->previous == NULL)
-		error_handling(&self, MOVEMENT);
+		return (FALSE);
 	self->top = self->top->previous;
+	return (TRUE);
 }
