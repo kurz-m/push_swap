@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 13:30:00 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/06 14:37:11 by work             ###   ########.fr       */
+/*   Updated: 2023/06/06 17:35:11 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,6 @@ int	parse_input(t_oop **stack, int argc, char **argv)
 		ft_arrfree(nbs);
 	}
 	(*stack)->max = (*stack)->elements++;
+	(*stack)->indexing(*stack);
 	return (TRUE);
 }
