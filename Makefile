@@ -56,7 +56,6 @@ $(LIBFT_NAME):
 #############################################################################
 
 clean:
-	@echo $(R)Cleaning"  "[$(OBJ_DIR)]...$(X);
 	@$(MAKE) -C ./lib/Libft/ clean
 	@printf $(UP)$(CUT)
 	@if [ -d "${OBJ_DIR}" ]; then \

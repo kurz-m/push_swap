@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:54:49 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/07 23:07:39 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/07 23:10:43 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ static void	sort_three(t_box *box)
 		movements_main(box, SWAP_A);
 }
 
-static void	sort_five(t_box *box)
-{
-	
-}
+// static void	sort_five(t_box *box)
+// {
+// 	
+// }
 
 void	sort_main(t_box *box)
 {
