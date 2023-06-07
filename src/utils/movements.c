@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:54:32 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/07 14:49:23 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/07 16:32:16 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,24 +101,24 @@ static void	revrotate_main(t_box *box, int move)
 	int		success;
 
 	success = TRUE;
-	if (move == ROT_A)
+	if (move == RROT_A)
 	{
 		success = box->a->revrotate(box->a);
 		if (success == TRUE)
-			write(1, "rra\n", 3);
+			write(1, "rra\n", 4);
 	}
-	else if (move == ROT_B)
+	else if (move == RROT_B)
 	{
 		success = box->b->revrotate(box->b);
 		if (success == TRUE)
-			write(1, "rrb\n", 3);
+			write(1, "rrb\n", 4);
 	}
-	if (move == ROT_ALL)
+	if (move == RROT_ALL)
 	{
 		success &= box->a->revrotate(box->a);
 		success &= box->b->revrotate(box->b);
 		if (success == TRUE)
-			write(1, "rrr\n", 3);
+			write(1, "rrr\n", 4);
 	}
 	if (success == FALSE)
 		error_handling(box, REVROTATE);
@@ -133,5 +133,5 @@ void	movements_main(t_box *box, int	move)
 	else if (move == ROT_A || move == ROT_B || move == ROT_ALL)
 		rotate_main(box, move);
 	else if (move == RROT_A || move == RROT_B || move == RROT_ALL)
-		rotate_main(box, move);
+		revrotate_main(box, move);
 }
