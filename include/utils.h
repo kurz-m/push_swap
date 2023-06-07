@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:57:31 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/07 18:02:07 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/07 22:45:42 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 typedef struct s_circle
 {
 	int					data;
-	int					index;
+	int					rank;
 	struct s_circle		*next;
 	struct s_circle		*previous;
 }	t_circle;
@@ -35,12 +35,12 @@ typedef struct s_oop
 	int			(*revrotate)(struct s_oop *);
 	int			(*swap)(struct s_oop *);
 	void		(*print)(struct s_oop *);
-	void		(*print_index)(struct s_oop *);
+	void		(*print_rank)(struct s_oop *);
 }	t_oop;
 
 typedef struct s_box
 {
-	int		max;
+	int		size;
 	t_oop	*a;
 	t_oop	*b;
 }	t_box;
@@ -56,7 +56,7 @@ int			rotate(t_oop *box);
 int			revrotate(t_oop *self);
 int			swap(t_oop *self);
 void		print(t_oop *self);
-void		print_index(t_oop *self);
+void		print_rank(t_oop *self);
 t_circle	*new_node(int data);
 void		construct_box(t_box *box);
 

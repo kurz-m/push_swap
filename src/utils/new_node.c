@@ -6,7 +6,7 @@
 /*   By: makurz <dumba@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 11:52:21 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/05 08:27:00 by work             ###   ########.fr       */
+/*   Updated: 2023/06/07 22:44:55 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_circle	*new_node(int data)
 	if (new_node == NULL)
 		return (NULL);
 	new_node->data = data;
-	new_node->index = 0;
+	new_node->rank = 0;
 	new_node->next = NULL;
 	new_node->previous = NULL;
 	return (new_node);

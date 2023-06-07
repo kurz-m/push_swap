@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:55:44 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/07 18:09:58 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/07 22:45:55 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	construct_box(t_box *box)
 {
-	box->max = 0;
+	box->size = 0;
 	box->a->constructor = construct;
 	box->a->constructor(box->a);
 	box->b->constructor = construct;
@@ -35,7 +35,7 @@ void	construct(t_oop *self)
 	self->revrotate = revrotate;
 	self->swap = swap;
 	self->print = print;
-	self->print_index = print_index;
+	self->print_rank = print_rank;
 }
 
 void	desconstruct(t_oop **self)
