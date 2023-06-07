@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 14:28:45 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/06 20:47:08 by work             ###   ########.fr       */
+/*   Updated: 2023/06/07 10:32:41 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	main(int argc, char **argv)
 		error_handling(&box, ALLOC_FAIL);
 	construct_box(&box);
 	parse_input(&box, argc - 1, argv);
+	box.a->print(box.a);
 	if (check_sorted(box.a) == FALSE)
 		ft_printf("sorted\n");
 	container_cleanup(&box);

@@ -6,7 +6,7 @@
 /*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/06 13:51:52 by work              #+#    #+#             */
-/*   Updated: 2023/06/06 18:27:25 by work             ###   ########.fr       */
+/*   Updated: 2023/06/07 10:58:07 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,13 @@ int	check_sorted(t_oop *stack)
 			break ;
 	}
 	return (TRUE);
+}
+
+void	sort_three(t_box *box)
+{
+	if (box->a->top->index > box->a->top->next->index &&
+		box->a->top->index < box->a->top->previous->index)
+		sa;
 }
 
 // void	sort_main(t_container *container)
