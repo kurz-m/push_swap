@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 13:30:00 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/07 10:41:03 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/07 18:02:37 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	parse_input(t_box *box, int argc, char **argv)
 		}
 		ft_arrfree(nbs);
 	}
-	box->a->max = box->a->elements++;
+	box->max = box->a->elements++;
 	box->a->indexing(box->a);
 	return (TRUE);
 }

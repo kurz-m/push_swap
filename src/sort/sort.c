@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:54:49 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/07 14:51:16 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/07 18:02:57 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ static void	sort_three(t_box *box)
 
 void	sort_main(t_box *box)
 {
-	ft_printf("max: %i\n", box->a->max);
-	if (box->a->max == 3)
+	if (box->max == 3)
 		sort_three(box);
 }

@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:57:31 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/07 13:11:09 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/07 18:02:07 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ typedef struct s_oop
 {
 	t_circle	*top;
 	int			elements;
-	int			max;
 	void		(*constructor)(struct s_oop *);
 	void		(*deconstructor)(struct s_oop **);
 	void		(*indexing)(struct s_oop *);
@@ -41,6 +40,7 @@ typedef struct s_oop
 
 typedef struct s_box
 {
+	int		max;
 	t_oop	*a;
 	t_oop	*b;
 }	t_box;

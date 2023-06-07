@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:55:44 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/07 12:55:45 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/07 18:02:25 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 void	construct_box(t_box *box)
 {
+	box->max = 0;
 	box->a->constructor = construct;
 	box->a->constructor(box->a);
 	box->b->constructor = construct;
@@ -25,7 +26,6 @@ void	construct(t_oop *self)
 {
 	self->top = NULL;
 	self->elements = 0;
-	self->max = 0;
 	self->deconstructor = desconstruct;
 	self->indexing = indexing;
 	self->pop = pop;
