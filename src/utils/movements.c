@@ -6,11 +6,11 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:54:32 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/07 16:32:16 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/07 21:11:42 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "util.h"
+#include "utils.h"
 #include "libft.h"
 #include "push_swap.h"
 
