@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:55:26 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/07 15:15:11 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/08 01:57:44 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,11 @@
 
 void	pop(t_oop *self)
 {
-	t_circle	*tmp_top;
+	t_circle	*new_top;
 
 	if (self->top == NULL)
 		return ;
+	// TODO: cannot be null => change to list lenght
 	if (self->top->next == NULL)
 	{
 		self->top->next = NULL;
@@ -27,8 +28,9 @@ void	pop(t_oop *self)
 		self->top = NULL;
 		return ;
 	}
-	tmp_top = self->top->next;
-	self->top->next = tmp_top->next;
-	self->top->previous->next = tmp_top;
-	self->top = tmp_top;
+	// FIX: does not seem to work
+	new_top = self->top->next;
+	self->top->next = new_top->next;
+	self->top->previous->next = new_top;
+	self->top = new_top;
 }
