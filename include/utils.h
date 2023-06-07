@@ -6,7 +6,7 @@
 /*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 16:14:19 by work              #+#    #+#             */
-/*   Updated: 2023/06/06 21:06:05 by work             ###   ########.fr       */
+/*   Updated: 2023/06/07 10:24:13 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int			swap(t_oop *self);
 void		print(t_oop *self);
 void		print_index(t_oop *self);
 t_circle	*new_node(int data);
-void		construct_container(t_box *box);
+void		construct_box(t_box *box);
 
 // other utils
 int			count_elements(t_oop *self);
