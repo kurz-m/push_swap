@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:55:05 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/07 12:55:06 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/07 22:44:16 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	indexing(t_oop *self)
 		while (1)
 		{
 			if (current->data >= run->data)
-				current->index += 1;
+				current->rank += 1;
 			run = run->next;
 			if (run == self->top)
 				break ;
