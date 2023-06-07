@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 14:28:45 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/07 16:28:45 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/07 18:01:37 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,10 @@ int	main(int argc, char **argv)
 		error_handling(&box, ALLOC_FAIL);
 	construct_box(&box);
 	parse_input(&box, argc - 1, argv);
-	box.a->print_index(box.a);
+//	box.a->print_index(box.a);
 	if (check_sorted(box.a) == FALSE)
-	{
-		ft_printf("sorting:\n");
 		sort_main(&box);
-		box.a->print_index(box.a);
-	}
+//		box.a->print_index(box.a);
 	box_cleanup(&box);
 	return (EXIT_SUCCESS);
 }
