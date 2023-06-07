@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/06 13:51:52 by work              #+#    #+#             */
-/*   Updated: 2023/06/07 10:58:07 by makurz           ###   ########.fr       */
+/*   Created: 2023/06/07 12:54:49 by makurz            #+#    #+#             */
+/*   Updated: 2023/06/07 14:51:16 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,20 @@ int	check_sorted(t_oop *stack)
 	return (TRUE);
 }
 
-void	sort_three(t_box *box)
+static void	sort_three(t_box *box)
 {
-	if (box->a->top->index > box->a->top->next->index &&
-		box->a->top->index < box->a->top->previous->index)
-		sa;
+	if (box->a->top->index > box->a->top->next->index
+			&& box->a->top->index > box->a->top->previous->index)
+		movements_main(box, ROT_A);
+	else if (box->a->top->previous->index < box->a->top->next->index)
+		movements_main(box, RROT_A);
+	if (box->a->top->index > box->a->top->next->index)
+		movements_main(box, SWAP_A);
 }
 
-// void	sort_main(t_container *container)
-// {
-// }
+void	sort_main(t_box *box)
+{
+	ft_printf("max: %i\n", box->a->max);
+	if (box->a->max == 3)
+		sort_three(box);
+}
