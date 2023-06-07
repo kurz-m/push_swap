@@ -6,7 +6,8 @@ NAME := push_swap
 #############################################################################
 
 CC := gcc
-CFLAGS ?= -Wextra -Wall -MMD -MP -g3
+CFLAGS ?= -Wextra -Wall -Werror -MMD -MP -g3
+CFLAGS += -Wno-unused-function
 LIBFT := ./lib/Libft
 HEADERS := -I./include -I$(LIBFT)/header
 LIBFT_NAME := $(LIBFT)/lib/libft.a
@@ -17,7 +18,7 @@ LIBFT_NAME := $(LIBFT)/lib/libft.a
 
 VPATH := src src/utils src/parse src/sort
 SRC = push_swap.c error_handling.c
-SRC_UTILS := init.c insert.c new_node.c pop.c print.c rotate.c swap.c utils.c
+SRC_UTILS := init.c insert.c new_node.c pop.c print.c rotate.c swap.c utils.c movements.c
 SRC_PARSE := parse_input.c
 SRC_SORT := sort.c
 SRCS := $(SRC) $(SRC_UTILS) $(SRC_SORT) $(SRC_PARSE)

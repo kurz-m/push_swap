@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 16:14:19 by work              #+#    #+#             */
-/*   Updated: 2023/06/07 10:24:13 by makurz           ###   ########.fr       */
+/*   Created: 2023/06/07 12:57:31 by makurz            #+#    #+#             */
+/*   Updated: 2023/06/07 13:11:09 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ typedef struct s_oop
 	void		(*deconstructor)(struct s_oop **);
 	void		(*indexing)(struct s_oop *);
 	void		(*pop)(struct s_oop *);
-	void		(*append)(struct s_oop *, t_circle *new_node);
-	void		(*prepend)(struct s_oop *, t_circle *new_node);
+	int			(*append)(struct s_oop *, t_circle *new_node);
+	int			(*prepend)(struct s_oop *, t_circle *new_node);
 	int			(*rotate)(struct s_oop *);
 	int			(*revrotate)(struct s_oop *);
 	int			(*swap)(struct s_oop *);
@@ -50,8 +50,8 @@ void		construct(t_oop *self);
 void		desconstruct(t_oop **self);
 void		indexing(t_oop *self);
 void		pop(t_oop *self);
-void		append(t_oop *self, t_circle *new_node);
-void		prepend(t_oop *self, t_circle *new_node);
+int			append(t_oop *self, t_circle *new_node);
+int			prepend(t_oop *self, t_circle *new_node);
 int			rotate(t_oop *box);
 int			revrotate(t_oop *self);
 int			swap(t_oop *self);
