@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 14:28:45 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/08 23:25:38 by work             ###   ########.fr       */
+/*   Updated: 2023/06/09 00:07:05 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	main(int argc, char **argv)
 	if (check_sorted(box.a) == FALSE)
 		sort_main(&box);
 	box.a->print_rank(box.a);
+	print_cmd(box.cmd);
 	box_cleanup(&box);
 	return (EXIT_SUCCESS);
 }
@@ -59,16 +60,16 @@ int	main(int argc, char **argv)
 // 	ft_printf("pop:\n");
 // 	box.a->print(box.a);
 // 	ft_printf("prepend\n");
-// 	box.a->prepend(box.a, temp);
+// 	box.a->append(box.a, temp);
 // 	// temp = box.a->top;
 // 	// box.a->pop(box.a);
 // 	// box.a->append(box.a, temp);
 // 	box.a->print(box.a);
-// 	// box.a->rotate(box.a);
-// 	// ft_printf("stack_B: ");
+// 	box.a->swap(box.a);
+// 	ft_printf("swap: \n");
 // 	// box.b->print(box.b);
 // 	// ft_printf("test\n");
-// 	// box.a->print(box.a);
+// 	box.a->print(box.a);
 // 	box.a->deconstructor(&box.a);
 // 	box.b->deconstructor(&box.b);
 // 	return (EXIT_SUCCESS);
