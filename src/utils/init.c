@@ -6,16 +6,27 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:55:44 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/08 15:36:18 by work             ###   ########.fr       */
+/*   Updated: 2023/06/08 23:44:25 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 #include "push_swap.h"
 
+void	box_cleanup(t_box *box)
+{
+	box->a->deconstructor(&box->a);
+	free(box->a);
+	box->a = NULL;
+	box->b->deconstructor(&box->b);
+	free(box->b);
+	box->b = NULL;
+}
+
 void	construct_box(t_box *box)
 {
 	box->size = 0;
+	box->cmd = NULL;
 	box->a->constructor = construct;
 	box->a->constructor(box->a);
 	box->b->constructor = construct;
@@ -52,6 +63,7 @@ void	desconstruct(t_oop **self)
 		tmp = current;
 		current = current->next;
 		free(tmp);
+		tmp = NULL;
 		if (current == (*self)->top)
 			break ;
 	}

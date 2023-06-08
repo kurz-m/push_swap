@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:57:31 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/08 16:16:53 by work             ###   ########.fr       */
+/*   Updated: 2023/06/08 23:26:03 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ typedef struct s_circle
 	struct s_circle		*next;
 	struct s_circle		*previous;
 }	t_circle;
+
+typedef struct s_cmd
+{
+	char			move[4];
+	struct s_cmd	*next;
+}	t_cmd;
 
 typedef struct s_oop
 {
@@ -42,6 +48,7 @@ typedef struct s_oop
 typedef struct s_box
 {
 	int		size;
+	t_cmd	*cmd;
 	t_oop	*a;
 	t_oop	*b;
 }	t_box;
@@ -59,7 +66,9 @@ int			revrotate(t_oop *self);
 int			swap(t_oop *self);
 void		print(t_oop *self);
 void		print_rank(t_oop *self);
+void		print_cmd(t_cmd **cmd);
 t_circle	*new_node(int data);
 void		construct_box(t_box *box);
+void		box_cleanup(t_box *box);
 
 #endif
