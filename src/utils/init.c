@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:55:44 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/07 22:45:55 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/08 15:36:18 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	construct(t_oop *self)
 	self->elements = 0;
 	self->deconstructor = desconstruct;
 	self->indexing = indexing;
+	self->count = count;
 	self->pop = pop;
 	self->append = append;
 	self->prepend = prepend;

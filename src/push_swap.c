@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 14:28:45 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/08 01:54:23 by work             ###   ########.fr       */
+/*   Updated: 2023/06/08 16:25:07 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,11 @@ int	main(int argc, char **argv)
 	box_cleanup(&box);
 	return (EXIT_SUCCESS);
 }
+// #include <stdio.h>
 // int	main(void)
 // {
 // 	t_box		box;
-// 	// t_circle	*temp;
+// 	t_circle	*temp;
 // // 	t_circle	*temp1;
 // 
 // 	box.a = ft_calloc(1, sizeof(t_oop));
@@ -62,17 +63,17 @@ int	main(int argc, char **argv)
 // 	box.a->append(box.a, new_node(2));
 // 	box.a->append(box.a, new_node(15));
 // 	box.a->print(box.a);
-// 	// temp = box.a->top;
-// 	// box.a->pop(box.a);
-// 	box.a->swap(box.a);
+// 	temp = box.a->pop(box.a);
+// 	// box.a->swap(box.a);
 // 	// box.a->revrotate(box.a);
-// 	ft_printf("prepend:\n");
+// 	ft_printf("pop:\n");
 // 	box.a->print(box.a);
-// 	// ft_printf("test\n");
+// 	ft_printf("prepend\n");
+// 	box.a->prepend(box.a, temp);
 // 	// temp = box.a->top;
 // 	// box.a->pop(box.a);
 // 	// box.a->append(box.a, temp);
-// 	// box.a->print(box.a);
+// 	box.a->print(box.a);
 // 	// box.a->rotate(box.a);
 // 	// ft_printf("stack_B: ");
 // 	// box.b->print(box.b);

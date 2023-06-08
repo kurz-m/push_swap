@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:54:32 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/07 21:11:42 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/08 16:23:55 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,14 @@ static void	push_main(t_box *box, int move)
 	success = TRUE;
 	if (move == PUSH_A)
 	{
-		tmp = box->b->top;
-		box->b->pop(box->b);
+		tmp = box->b->pop(box->b);
 		success = box->a->prepend(box->a, tmp);
 		if (success == TRUE)
 			write(1, "pa\n", 3);
 	}
 	else if (move == PUSH_B)
 	{
-		tmp = box->a->top;
-		box->a->pop(box->a);
+		tmp = box->a->pop(box->a);
 		success = box->b->prepend(box->b, tmp);
 		if (success == TRUE)
 			write(1, "pb\n", 3);
