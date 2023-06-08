@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:57:31 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/07 22:45:42 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/08 16:16:53 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ typedef struct s_oop
 	void		(*constructor)(struct s_oop *);
 	void		(*deconstructor)(struct s_oop **);
 	void		(*indexing)(struct s_oop *);
-	void		(*pop)(struct s_oop *);
+	int			(*count)(struct s_oop *);
+	t_circle	*(*pop)(struct s_oop *);
 	int			(*append)(struct s_oop *, t_circle *new_node);
 	int			(*prepend)(struct s_oop *, t_circle *new_node);
 	int			(*rotate)(struct s_oop *);
@@ -49,7 +50,8 @@ typedef struct s_box
 void		construct(t_oop *self);
 void		desconstruct(t_oop **self);
 void		indexing(t_oop *self);
-void		pop(t_oop *self);
+int			count(t_oop *self);
+t_circle	*pop(t_oop *self);
 int			append(t_oop *self, t_circle *new_node);
 int			prepend(t_oop *self, t_circle *new_node);
 int			rotate(t_oop *box);
@@ -59,8 +61,5 @@ void		print(t_oop *self);
 void		print_rank(t_oop *self);
 t_circle	*new_node(int data);
 void		construct_box(t_box *box);
-
-// other utils
-int			count_elements(t_oop *self);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:55:05 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/07 22:44:16 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/08 15:43:34 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	indexing(t_oop *self)
 	}
 }
 
-int	count_elements(t_oop *self)
+int	count(t_oop *self)
 {
 	int			count;
 	t_circle	*current;
