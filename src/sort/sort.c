@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:54:49 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/07 23:10:43 by work             ###   ########.fr       */
+/*   Updated: 2023/06/08 23:46:16 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	check_sorted(t_oop *stack)
 static void	sort_three(t_box *box)
 {
 	if (box->a->top->rank > box->a->top->next->rank
-			&& box->a->top->rank > box->a->top->previous->rank)
+		&& box->a->top->rank > box->a->top->previous->rank)
 		movements_main(box, ROT_A);
 	else if (box->a->top->previous->rank < box->a->top->next->rank)
 		movements_main(box, RROT_A);
@@ -41,10 +41,9 @@ static void	sort_three(t_box *box)
 		movements_main(box, SWAP_A);
 }
 
-// static void	sort_five(t_box *box)
-// {
-// 	
-// }
+static void	sort_five(t_box *box)
+{
+}
 
 void	sort_main(t_box *box)
 {

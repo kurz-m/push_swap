@@ -6,23 +6,13 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 14:28:45 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/08 16:25:07 by work             ###   ########.fr       */
+/*   Updated: 2023/06/08 23:25:38 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 #include "utils.h"
-
-void	box_cleanup(t_box *box)
-{
-	box->a->deconstructor(&box->a);
-	free(box->a);
-	box->a = NULL;
-	box->b->deconstructor(&box->b);
-	free(box->b);
-	box->b = NULL;
-}
 
 int	main(int argc, char **argv)
 {

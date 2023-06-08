@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:54:32 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/08 16:23:55 by work             ###   ########.fr       */
+/*   Updated: 2023/06/08 23:45:20 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ static void	revrotate_main(t_box *box, int move)
 		error_handling(box, REVROTATE);
 }
 
-void	movements_main(t_box *box, int	move)
+void	movements_main(t_box *box, int move)
 {
 	if (move == SWAP_A || move == SWAP_B || move == SWAP_ALL)
 		swap_main(box, move);

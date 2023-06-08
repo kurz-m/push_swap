@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:54:58 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/07 22:45:21 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/08 23:45:47 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,26 @@ void	print_rank(t_oop *self)
 	{
 		current = current->next;
 		ft_printf("Number: %i\n", current->rank);
+	}
+}
+
+void	print_cmd(t_cmd **cmd)
+{
+	t_cmd	*current;
+
+	current = *cmd;
+	while (current != NULL)
+	{
+		if (ft_strncmp(current->move, "rb", 2)
+			&& ft_strncmp(current->next->move, "ra", 2))
+		{
+			ft_printf("rr\n");
+			current = current->next->next;
+		}
+		else
+		{
+			ft_printf("%s", current->move);
+			current = current->next;
+		}
 	}
 }
