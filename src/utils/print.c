@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:54:58 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/08 23:45:47 by work             ###   ########.fr       */
+/*   Updated: 2023/06/09 00:09:06 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,14 @@ void	print_rank(t_oop *self)
 	}
 }
 
-void	print_cmd(t_cmd **cmd)
+void	print_cmd(t_cmd *cmd)
 {
 	t_cmd	*current;
 
-	current = *cmd;
+	current = cmd;
 	while (current != NULL)
 	{
+		ft_printf("ERROR\n");
 		if (ft_strncmp(current->move, "rb", 2)
 			&& ft_strncmp(current->next->move, "ra", 2))
 		{

@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:54:32 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/08 23:45:20 by work             ###   ########.fr       */
+/*   Updated: 2023/06/09 00:03:29 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,20 @@ static void	push_main(t_box *box, int move)
 		tmp = box->b->pop(box->b);
 		success = box->a->prepend(box->a, tmp);
 		if (success == TRUE)
+		{
 			write(1, "pa\n", 3);
+			append_cmd(&box->cmd, new_cmd("pa\n"));
+		}
 	}
 	else if (move == PUSH_B)
 	{
 		tmp = box->a->pop(box->a);
 		success = box->b->prepend(box->b, tmp);
 		if (success == TRUE)
+		{
 			write(1, "pb\n", 3);
+			append_cmd(&box->cmd, new_cmd("pb\n"));
+		}
 	}
 	if (success == FALSE)
 		error_handling(box, PUSH);
@@ -47,13 +53,19 @@ static void	swap_main(t_box *box, int move)
 	{
 		success = box->a->swap(box->a);
 		if (success == TRUE)
+		{
 			write(1, "sa\n", 3);
+			append_cmd(&box->cmd, new_cmd("sa\n"));
+		}
 	}
 	else if (move == SWAP_B)
 	{
 		success = box->b->swap(box->b);
 		if (success == TRUE)
+		{
 			write(1, "sb\n", 3);
+			append_cmd(&box->cmd, new_cmd("sb\n"));
+		}
 	}
 	else if (move == SWAP_ALL)
 	{
@@ -75,13 +87,19 @@ static void	rotate_main(t_box *box, int move)
 	{
 		success = box->a->rotate(box->a);
 		if (success == TRUE)
+		{
 			write(1, "ra\n", 3);
+			append_cmd(&box->cmd, new_cmd("ra\n"));
+		}
 	}
 	else if (move == ROT_B)
 	{
 		success = box->b->rotate(box->b);
 		if (success == TRUE)
+		{
 			write(1, "rb\n", 3);
+			append_cmd(&box->cmd, new_cmd("rb\n"));
+		}
 	}
 	if (move == ROT_ALL)
 	{

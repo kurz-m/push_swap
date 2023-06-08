@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   optimze.c                                          :+:      :+:    :+:   */
+/*   optimize.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: work <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 22:55:53 by work              #+#    #+#             */
-/*   Updated: 2023/06/08 23:29:26 by work             ###   ########.fr       */
+/*   Updated: 2023/06/09 00:11:59 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ t_cmd	*new_cmd(char *cmd)
 	new_cmd = (t_cmd *) ft_calloc(1, sizeof(t_cmd));
 	if (new_cmd == NULL)
 		return (NULL);
-	ft_memcpy(new_cmd->move, cmd, ft_strlen(cmd));
+	new_cmd->move = ft_strdup(cmd);
+	ft_printf("%s\n", new_cmd->move);
+	// ft_memcpy(new_cmd->move, cmd, ft_strlen(cmd));
 	new_cmd->next = NULL;
 	return (new_cmd);
 }

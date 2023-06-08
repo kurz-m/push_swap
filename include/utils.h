@@ -6,13 +6,14 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:57:31 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/08 23:26:03 by work             ###   ########.fr       */
+/*   Updated: 2023/06/09 00:10:48 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef UTILS_H
 # define UTILS_H
 
+// struct for the double linked circular list
 typedef struct s_circle
 {
 	int					data;
@@ -21,12 +22,14 @@ typedef struct s_circle
 	struct s_circle		*previous;
 }	t_circle;
 
+// struct for the movements
 typedef struct s_cmd
 {
-	char			move[4];
+	char			*move;
 	struct s_cmd	*next;
 }	t_cmd;
 
+// object struct for holding the functions
 typedef struct s_oop
 {
 	t_circle	*top;
@@ -45,6 +48,7 @@ typedef struct s_oop
 	void		(*print_rank)(struct s_oop *);
 }	t_oop;
 
+// box for holding all other structs
 typedef struct s_box
 {
 	int		size;
@@ -66,9 +70,13 @@ int			revrotate(t_oop *self);
 int			swap(t_oop *self);
 void		print(t_oop *self);
 void		print_rank(t_oop *self);
-void		print_cmd(t_cmd **cmd);
+void		print_cmd(t_cmd *cmd);
 t_circle	*new_node(int data);
 void		construct_box(t_box *box);
 void		box_cleanup(t_box *box);
+
+// functions for creating cmd linked list
+t_cmd		*new_cmd(char *cmd);
+void		append_cmd(t_cmd **cmd, t_cmd *new_cmd);
 
 #endif
