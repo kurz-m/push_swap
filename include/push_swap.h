@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 16:28:54 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/08 23:46:49 by work             ###   ########.fr       */
+/*   Updated: 2023/06/10 00:35:17 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
 // Defines
 # define TRUE 1
 # define FALSE 0
+# define UPDATE_A 21
+# define UPDATE_B 42
 
 enum e_errors
 {
@@ -56,6 +58,7 @@ void	parse_error(t_box *box, char **nbs);
 int		check_sorted(t_oop *stack);
 void	box_cleanup(t_box *box);
 void	movements_main(t_box *box, int move);
+void	update_elements(t_box *box, int update);
 void	sort_main(t_box *box);
 
 #endif

@@ -6,12 +6,26 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:55:05 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/08 15:43:34 by work             ###   ########.fr       */
+/*   Updated: 2023/06/10 00:35:33 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 #include "push_swap.h"
+
+void	update_elements(t_box *box, int update)
+{
+	if (update == UPDATE_A)
+	{
+		box->a->elements++;
+		box->b->elements--;
+	}
+	else if (update == UPDATE_B)
+	{
+		box->a->elements--;
+		box->b->elements++;
+	}
+}
 
 void	indexing(t_oop *self)
 {
