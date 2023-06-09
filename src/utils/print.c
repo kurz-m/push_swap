@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:54:58 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/09 00:09:06 by work             ###   ########.fr       */
+/*   Updated: 2023/06/09 11:59:43 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,24 +39,38 @@ void	print_rank(t_oop *self)
 	}
 }
 
-void	print_cmd(t_cmd *cmd)
+static void	print_optimize(char *prev_cmd, int size)
 {
-	t_cmd	*current;
-
-	current = cmd;
-	while (current != NULL)
+	while (size-- > 0)
 	{
-		ft_printf("ERROR\n");
-		if (ft_strncmp(current->move, "rb", 2)
-			&& ft_strncmp(current->next->move, "ra", 2))
-		{
-			ft_printf("rr\n");
-			current = current->next->next;
-		}
-		else
-		{
-			ft_printf("%s", current->move);
-			current = current->next;
-		}
+		write (1, prev_cmd, 1);
+		if (size == 0)
+			write (1, "\n", 1);
 	}
+}
+
+void	print_cmd(char *move)
+{
+	static char		*prev_cmd;
+	int				comp;
+
+	comp = 1;
+	if (prev_cmd == NULL)
+	{
+		prev_cmd = move;
+		return ;
+	}
+	if (ft_strlen(prev_cmd) == 4)
+		comp++;
+	if (*prev_cmd == 'p')
+		write(1, prev_cmd, ft_strlen(prev_cmd));
+	else if ((move[comp] == 'a' && prev_cmd[comp] == 'b')
+		|| (move[comp] == 'b' && prev_cmd[comp] == 'a'))
+	{
+		print_optimize(prev_cmd, ft_strlen(move) - 1);
+		move = NULL;
+	}
+	else
+		write(1, prev_cmd, ft_strlen(prev_cmd));
+	prev_cmd = move;
 }

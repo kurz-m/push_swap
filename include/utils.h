@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:57:31 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/09 00:10:48 by work             ###   ########.fr       */
+/*   Updated: 2023/06/09 11:50:36 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,9 @@ int			revrotate(t_oop *self);
 int			swap(t_oop *self);
 void		print(t_oop *self);
 void		print_rank(t_oop *self);
-void		print_cmd(t_cmd *cmd);
+void		print_cmd(char *move);
 t_circle	*new_node(int data);
 void		construct_box(t_box *box);
 void		box_cleanup(t_box *box);
-
-// functions for creating cmd linked list
-t_cmd		*new_cmd(char *cmd);
-void		append_cmd(t_cmd **cmd, t_cmd *new_cmd);
 
 #endif
