@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:54:58 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/09 23:50:46 by work             ###   ########.fr       */
+/*   Updated: 2023/06/10 00:26:31 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,6 @@ static void	print_optimize(char *prev_cmd, int size)
 	}
 }
 
-// static void print_push(char *prev_cmd, char **move)
-// {
-// 	if ((move[0][1] == 'a' && prev_cmd[1] == 'b')
-// 		|| (move[0][1] == 'b' && prev_cmd[1] == 'a'))
-// 		*move = NULL ;
-// 	else
-// 		write(1, prev_cmd, ft_strlen(prev_cmd));
-// }
-
 void	print_cmd(char *move)
 {
 	static char		*prev_cmd = NULL;
@@ -72,7 +63,6 @@ void	print_cmd(char *move)
 	if (ft_strlen(prev_cmd) == 4)
 		comp++;
 	if (*move == 'p' || *prev_cmd == 'p')
-		// print_push(prev_cmd, &move);
 		write(1, prev_cmd, ft_strlen(prev_cmd));
 	else if ((move[comp] == 'a' && prev_cmd[comp] == 'b')
 		|| (move[comp] == 'b' && prev_cmd[comp] == 'a'))

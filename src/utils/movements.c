@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:54:32 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/09 14:07:39 by work             ###   ########.fr       */
+/*   Updated: 2023/06/10 00:35:37 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,7 @@ static void	push_main(t_box *box, int move)
 		tmp = box->b->pop(box->b);
 		success = box->a->prepend(box->a, tmp);
 		if (success == TRUE)
-		{
-			box->b->elements--;
-			box->a->elements++;
-		}
+			update_elements(box, UPDATE_A);
 		if (success == TRUE)
 			print_cmd("pa\n");
 	}
@@ -37,10 +34,7 @@ static void	push_main(t_box *box, int move)
 		tmp = box->a->pop(box->a);
 		success = box->b->prepend(box->b, tmp);
 		if (success == TRUE)
-		{
-			box->a->elements--;
-			box->b->elements++;
-		}
+			update_elements(box, UPDATE_B);
 		if (success == TRUE)
 			print_cmd("pb\n");
 	}
