@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:54:58 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/09 11:59:43 by work             ###   ########.fr       */
+/*   Updated: 2023/06/09 15:49:21 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,10 @@ static void	print_optimize(char *prev_cmd, int size)
 
 void	print_cmd(char *move)
 {
-	static char		*prev_cmd;
+	static char		*prev_cmd = NULL;
 	int				comp;
 
+	// ft_printf("move: %s\n", move);
 	comp = 1;
 	if (prev_cmd == NULL)
 	{
@@ -62,7 +63,7 @@ void	print_cmd(char *move)
 	}
 	if (ft_strlen(prev_cmd) == 4)
 		comp++;
-	if (*prev_cmd == 'p')
+	if (*move == 'p' || *prev_cmd == 'p')
 		write(1, prev_cmd, ft_strlen(prev_cmd));
 	else if ((move[comp] == 'a' && prev_cmd[comp] == 'b')
 		|| (move[comp] == 'b' && prev_cmd[comp] == 'a'))

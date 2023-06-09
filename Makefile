@@ -20,7 +20,7 @@ VPATH := src src/utils src/parse src/sort
 SRC = push_swap.c error_handling.c
 SRC_UTILS := init.c insert.c new_node.c pop.c print.c rotate.c swap.c utils.c movements.c
 SRC_PARSE := parse_input.c
-SRC_SORT := sort.c
+SRC_SORT := sort.c sort_utils.c
 SRCS := $(SRC) $(SRC_UTILS) $(SRC_SORT) $(SRC_PARSE)
 # SRCS := $(SRC)
 
