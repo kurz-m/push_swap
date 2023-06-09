@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:54:49 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/09 16:55:50 by work             ###   ########.fr       */
+/*   Updated: 2023/06/10 00:08:14 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	check_sorted(t_oop *stack)
 
 static void	sort_three(t_box *box)
 {
+	if (check_sorted(box->a))
+		return ;
 	if (box->a->top->rank > box->a->top->next->rank
 		&& box->a->top->rank > box->a->top->previous->rank)
 		movements_main(box, ROT_A);
@@ -41,8 +43,6 @@ static void	sort_three(t_box *box)
 		movements_main(box, SWAP_A);
 }
 
-#include <stdio.h>
-
 static void	sort_five(t_box *box)
 {
 	int		rank;
@@ -50,19 +50,22 @@ static void	sort_five(t_box *box)
 	rank = 1;
 	while (box->a->elements > 3)
 	{
-		// printf("elements a: %i\n", box->a->elements);
-		// printf("elements b: %i\n", box->b->elements);
 		while (box->a->top->rank != rank)
 		{
-			// printf("forward: %i\nreverse: %i\n", forward_cost(box->a, rank), reverse_cost(box->a, rank));
 			if (forward_cost(box->a, rank) < reverse_cost(box->a, rank))
 				movements_main(box, ROT_A);
 			else
 				movements_main(box, RROT_A);
 		}
+		if (check_sorted(box->a) == TRUE)
+			break ;
 		movements_main(box, PUSH_B);
-		// box->a->print(box->a);
 		rank++;
+	}
+	if (check_sorted(box->a) == TRUE)
+	{
+		while (box->b->elements > 0)
+			movements_main(box, PUSH_A);
 	}
 	sort_three(box);
 	while (box->b->elements > 0)
@@ -71,7 +74,9 @@ static void	sort_five(t_box *box)
 
 void	sort_main(t_box *box)
 {
-	if (box->size == 3)
+	if (box->size == 2)
+		movements_main(box, SWAP_A);
+	else if (box->size == 3)
 		sort_three(box);
 	else if (box->size <= 5)
 		sort_five(box);
