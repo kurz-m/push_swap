@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:54:49 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/10 20:40:16 by work             ###   ########.fr       */
+/*   Updated: 2023/06/10 22:31:22 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,39 +54,6 @@ static void	sort_five(t_box *box)
 	sort_three(box);
 	while (box->b->elements > 0)
 		movements_main(box, PUSH_A);
-}
-
-static void	sort(t_box *box)
-{
-	int		rank;
-	int		pivot;
-
-	rank = 1;
-	pivot = 34;
-	while (box->a->elements > 0)
-	{
-		if (box->a->top->rank <= pivot + rank)
-		{
-			movements_main(box, PUSH_B);
-			if (box->b->top->rank <= rank++)
-				movements_main(box, ROT_B);
-		}
-		else
-			movements_main(box, ROT_A);
-	}
-	rank--;
-	while (box->b->elements > 0)
-	{
-		while (box->b->top->rank != rank)
-		{
-			if (forward_cost(box->b, rank, 1) < reverse_cost(box->b, rank, 1))
-				movements_main(box, ROT_B);
-			else
-				movements_main(box, RROT_B);
-		}
-		movements_main(box, PUSH_A);
-		--rank;
-	}
 }
 
 void	sort_main(t_box *box)
