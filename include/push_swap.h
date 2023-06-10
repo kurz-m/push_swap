@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 16:28:54 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/10 00:35:17 by work             ###   ########.fr       */
+/*   Updated: 2023/06/10 15:10:31 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@
 # define FALSE 0
 # define UPDATE_A 21
 # define UPDATE_B 42
+# define SORT_SMALL 1
+# define SORT_BIG 2
 
 enum e_errors
 {

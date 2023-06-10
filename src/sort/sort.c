@@ -6,29 +6,13 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:54:49 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/10 00:08:14 by work             ###   ########.fr       */
+/*   Updated: 2023/06/10 20:40:16 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "utils.h"
 #include "push_swap.h"
-
-int	check_sorted(t_oop *stack)
-{
-	t_circle	*current;
-
-	current = stack->top;
-	while (1)
-	{
-		if (current->data > current->next->data)
-			return (FALSE);
-		current = current->next;
-		if (current == stack->top->previous)
-			break ;
-	}
-	return (TRUE);
-}
 
 static void	sort_three(t_box *box)
 {
@@ -52,7 +36,7 @@ static void	sort_five(t_box *box)
 	{
 		while (box->a->top->rank != rank)
 		{
-			if (forward_cost(box->a, rank) < reverse_cost(box->a, rank))
+			if (forward_cost(box->a, rank, 1) < reverse_cost(box->a, rank, 1))
 				movements_main(box, ROT_A);
 			else
 				movements_main(box, RROT_A);
@@ -72,6 +56,39 @@ static void	sort_five(t_box *box)
 		movements_main(box, PUSH_A);
 }
 
+static void	sort(t_box *box)
+{
+	int		rank;
+	int		pivot;
+
+	rank = 1;
+	pivot = 34;
+	while (box->a->elements > 0)
+	{
+		if (box->a->top->rank <= pivot + rank)
+		{
+			movements_main(box, PUSH_B);
+			if (box->b->top->rank <= rank++)
+				movements_main(box, ROT_B);
+		}
+		else
+			movements_main(box, ROT_A);
+	}
+	rank--;
+	while (box->b->elements > 0)
+	{
+		while (box->b->top->rank != rank)
+		{
+			if (forward_cost(box->b, rank, 1) < reverse_cost(box->b, rank, 1))
+				movements_main(box, ROT_B);
+			else
+				movements_main(box, RROT_B);
+		}
+		movements_main(box, PUSH_A);
+		--rank;
+	}
+}
+
 void	sort_main(t_box *box)
 {
 	if (box->size == 2)
@@ -80,4 +97,6 @@ void	sort_main(t_box *box)
 		sort_three(box);
 	else if (box->size <= 5)
 		sort_five(box);
+	else
+		sort(box);
 }
