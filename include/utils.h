@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:57:31 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/09 13:54:49 by work             ###   ########.fr       */
+/*   Updated: 2023/06/10 15:11:35 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,6 @@ typedef struct s_circle
 	struct s_circle		*next;
 	struct s_circle		*previous;
 }	t_circle;
-
-// struct for the movements
-typedef struct s_cmd
-{
-	char			*move;
-	struct s_cmd	*next;
-}	t_cmd;
 
 // object struct for holding the functions
 typedef struct s_oop
@@ -52,7 +45,6 @@ typedef struct s_oop
 typedef struct s_box
 {
 	int		size;
-	t_cmd	*cmd;
 	t_oop	*a;
 	t_oop	*b;
 }	t_box;
@@ -76,7 +68,7 @@ void		construct_box(t_box *box);
 void		box_cleanup(t_box *box);
 
 // cost calculation
-int	forward_cost(t_oop *self, int rank);
-int	reverse_cost(t_oop *self, int rank);
+int			forward_cost(t_oop *self, int rank, int sort);
+int			reverse_cost(t_oop *self, int rank, int sort);
 
 #endif

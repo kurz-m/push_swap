@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 14:28:45 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/09 16:55:42 by work             ###   ########.fr       */
+/*   Updated: 2023/06/10 00:37:15 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 #include "push_swap.h"
 #include "utils.h"
 
+// TODO:
+// add sorting for bigger stack sizes
+// restructure the functions and which file they are
+// check header files again
 int	main(int argc, char **argv)
 {
 	t_box		box;

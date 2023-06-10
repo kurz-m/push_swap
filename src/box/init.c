@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:55:44 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/08 23:44:25 by work             ###   ########.fr       */
+/*   Updated: 2023/06/10 11:29:24 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	box_cleanup(t_box *box)
 void	construct_box(t_box *box)
 {
 	box->size = 0;
-	box->cmd = NULL;
 	box->a->constructor = construct;
 	box->a->constructor(box->a);
 	box->b->constructor = construct;

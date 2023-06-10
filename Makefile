@@ -16,13 +16,13 @@ LIBFT_NAME := $(LIBFT)/lib/libft.a
 #############################################################################
 #############################################################################
 
-VPATH := src src/utils src/parse src/sort
+VPATH := src src/utils src/parse src/sort src/box
 SRC = push_swap.c error_handling.c
-SRC_UTILS := init.c insert.c new_node.c pop.c print.c rotate.c swap.c utils.c movements.c
+SRC_BOX := init.c insert.c new_node.c pop.c print.c rotate.c swap.c
 SRC_PARSE := parse_input.c
 SRC_SORT := sort.c sort_utils.c
-SRCS := $(SRC) $(SRC_UTILS) $(SRC_SORT) $(SRC_PARSE)
-# SRCS := $(SRC)
+SRC_UTILS := utils.c movements.c
+SRCS := $(SRC) $(SRC_BOX) $(SRC_PARSE) $(SRC_SORT) $(SRC_UTILS)
 
 #############################################################################
 #############################################################################
