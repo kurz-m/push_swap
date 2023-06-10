@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 16:28:54 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/10 15:10:31 by work             ###   ########.fr       */
+/*   Updated: 2023/06/10 22:31:20 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ void	box_cleanup(t_box *box);
 void	movements_main(t_box *box, int move);
 void	update_elements(t_box *box, int update);
 void	sort_main(t_box *box);
+void	sort(t_box *box);
 
 #endif

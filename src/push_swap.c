@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 14:28:45 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/10 00:37:15 by work             ###   ########.fr       */
+/*   Updated: 2023/06/10 22:10:51 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 	t_box		box;
 
 	if (argc < 2)
-		return (write(2, "Error\n", 6), EXIT_FAILURE);
+		return (EXIT_FAILURE);
 	box.a = ft_calloc(1, sizeof(t_oop));
 	box.b = ft_calloc(1, sizeof(t_oop));
 	if (NULL == box.a || NULL == box.b)

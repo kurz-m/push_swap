@@ -56,3 +56,4 @@ dkms.conf
 _obj
 push_swap
 push_swap_tester/
+pswapviz.py
