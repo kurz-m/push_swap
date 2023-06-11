@@ -6,13 +6,15 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:54:32 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/10 00:35:37 by work             ###   ########.fr       */
+/*   Updated: 2023/06/12 01:40:09 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 #include "libft.h"
 #include "push_swap.h"
+
+#include "movements.h"
 
 static void	push_main(t_box *box, int move)
 {

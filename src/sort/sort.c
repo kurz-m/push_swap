@@ -6,13 +6,15 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:54:49 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/10 22:31:22 by work             ###   ########.fr       */
+/*   Updated: 2023/06/12 01:38:17 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "utils.h"
 #include "push_swap.h"
+
+#include "movements.h"
 
 static void	sort_three(t_box *box)
 {

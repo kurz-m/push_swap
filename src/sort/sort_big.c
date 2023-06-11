@@ -6,13 +6,15 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/10 22:29:56 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/10 22:39:41 by work             ###   ########.fr       */
+/*   Updated: 2023/06/12 01:39:28 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "utils.h"
 #include "push_swap.h"
+
+#include "movements.h"
 
 static void	presort_to_b(t_box *box, int pivot, int *rank)
 {
