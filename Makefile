@@ -1,4 +1,5 @@
 NAME := push_swap
+NAME_BONUS := checker
 .DEFAULT_GOAL := all
 
 #############################################################################
@@ -17,12 +18,15 @@ LIBFT_NAME := $(LIBFT)/lib/libft.a
 #############################################################################
 
 VPATH := src src/utils src/parse src/sort src/box
-SRC = push_swap.c error_handling.c
+SRC = push_swap.c
 SRC_BOX := init.c insert.c new_node.c pop.c print.c rotate.c swap.c
 SRC_PARSE := parse_input.c
 SRC_SORT := sort.c sort_big.c sort_utils.c
-SRC_UTILS := utils.c movements.c
+SRC_UTILS := utils.c movements.c error_handling.c
 SRCS := $(SRC) $(SRC_BOX) $(SRC_PARSE) $(SRC_SORT) $(SRC_UTILS)
+
+SRC_CHECKER :=
+SRCS_BONUS := $(SRC_BOX) $(SRC_PARSE) $(SRC_UTILS) $(SRC_CHECKER)
 
 #############################################################################
 #############################################################################
@@ -30,6 +34,7 @@ SRCS := $(SRC) $(SRC_BOX) $(SRC_PARSE) $(SRC_SORT) $(SRC_UTILS)
 
 OBJ_DIR := ./_obj
 OBJS := $(addprefix $(OBJ_DIR)/, $(SRCS:%.c=%.o))
+OBJS_BONUS := $(addprefix $(OBJ_DIR)/, $(SRCS_BONUS:%.c=%.o))
 
 #############################################################################
 #############################################################################
@@ -47,9 +52,18 @@ $(OBJ_DIR)/%.o: %.c
 	@echo $(Y)Compiling [$@]...$(X)
 	@mkdir -p _obj
 	@$(CC) $(CFLAGS) -c $< $(HEADERS) -o $@
+	@printf $(UP)$(CUT)
 
 $(LIBFT_NAME):
 	$(MAKE) -C $(LIBFT)
+
+bonus: $(NAME_BONUS)
+
+$(NAME_BONUS): $(OBJS_BONUS) $(LIBFT_NAME)
+	@echo $(Y)Compiling [$(NAME_BONUS)]...$(X)
+	@printf $(UP)$(CUT)
+	@$(CC) $(OBJS_BONUS) $(LIBFT_NAME) -o $(NAME_BONUS)
+	@echo $(G)Finished"  "[$(NAME_BONUS)]...$(X)
 
 #############################################################################
 #############################################################################
