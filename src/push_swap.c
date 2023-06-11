@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 14:28:45 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/10 22:10:51 by work             ###   ########.fr       */
+/*   Updated: 2023/06/12 01:16:53 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 #include "utils.h"
 
 // TODO:
-// add sorting for bigger stack sizes
-// restructure the functions and which file they are
 // check header files again
 int	main(int argc, char **argv)
 {
