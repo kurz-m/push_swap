@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 14:11:45 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/13 14:47:54 by work             ###   ########.fr       */
+/*   Updated: 2023/06/13 15:11:42 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	get_eof_signal(ssize_t *byte, char *stash)
 	}
 }
 
-static int	get_input(t_box *box)
+static int	get_user_input(t_box *box)
 {
 	char		stash[4];
 	int			cmd;
@@ -74,7 +74,7 @@ int	main(int argc, char **argv)
 		error_handling(&box, ALLOC_FAIL);
 	construct_box(&box);
 	parse_input(&box, argc - 1, argv);
-	get_input(&box);
+	get_user_input(&box);
 	if (check_sorted(box.a) == TRUE && box.b->elements == 0)
 		ft_printf("OK\n");
 	else
