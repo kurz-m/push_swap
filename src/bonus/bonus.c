@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 14:11:45 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/13 13:33:16 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/13 14:47:54 by work             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	main(int argc, char **argv)
 	construct_box(&box);
 	parse_input(&box, argc - 1, argv);
 	get_input(&box);
-	if (check_sorted(box.a) == TRUE)
+	if (check_sorted(box.a) == TRUE && box.b->elements == 0)
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
