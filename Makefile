@@ -17,7 +17,7 @@ LIBFT_NAME := $(LIBFT)/lib/libft.a
 #############################################################################
 #############################################################################
 
-VPATH := src src/utils src/parse src/sort src/box
+VPATH := src src/bonus src/box src/parse src/sort src/utils
 SRC = push_swap.c
 SRC_BOX := init.c insert.c new_node.c pop.c print.c rotate.c swap.c
 SRC_PARSE := parse_input.c
@@ -25,8 +25,8 @@ SRC_SORT := sort.c sort_big.c sort_utils.c
 SRC_UTILS := utils.c movements.c error_handling.c
 SRCS := $(SRC) $(SRC_BOX) $(SRC_PARSE) $(SRC_SORT) $(SRC_UTILS)
 
-SRC_CHECKER :=
-SRCS_BONUS := $(SRC_BOX) $(SRC_PARSE) $(SRC_UTILS) $(SRC_CHECKER)
+SRC_CHECKER := bonus.c bonus_movements.c
+SRCS_BONUS := $(SRC_BOX) $(SRC_PARSE) $(SRC_UTILS) $(SRC_CHECKER) $(SRC_SORT)
 
 #############################################################################
 #############################################################################
@@ -107,6 +107,9 @@ CUT := "\033[K"
 #############################################################################
 #############################################################################
 #############################################################################
+
+norm:
+	norminette ./src/
 
 .PHONY: all clean fclean re bonus
 -include $(OBJS:%.o=%.d)

@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 16:25:31 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/07 14:09:45 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/13 13:10:02 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@ void	error_handling(t_box *box, int error_code)
 		write(2, "There was a problem with a stack rotation.\n", 43);
 	else if (error_code == REVROTATE)
 		write(2, "There was a problem with a stack revrotation.\n", 46);
+	else if (error_code == READ_ERROR)
+		write(2, "There was a problem with reading standard input.\n", 49);
+	else if (error_code == WRONG_COMMAND)
+		write(2, "Command input was wrong\n", 24);
 	box_cleanup(box);
 	exit(EXIT_FAILURE);
 }

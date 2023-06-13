@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 16:28:54 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/12 01:38:41 by makurz           ###   ########.fr       */
+/*   Updated: 2023/06/13 13:09:15 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,22 +37,9 @@ enum e_errors
 	SWAP,
 	ROTATE,
 	REVROTATE,
+	READ_ERROR,
+	WRONG_COMMAND,
 };
-
-// enum e_movements
-// {
-// 	SWAP_A,
-// 	SWAP_B,
-// 	SWAP_ALL,
-// 	ROT_A,
-// 	ROT_B,
-// 	ROT_ALL,
-// 	RROT_A,
-// 	RROT_B,
-// 	RROT_ALL,
-// 	PUSH_A,
-// 	PUSH_B,
-// };
 
 int		parse_input(t_box *box, int argc, char **argv);
 void	error_handling(t_box *box, int error_code);
