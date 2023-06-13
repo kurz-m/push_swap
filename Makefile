@@ -6,8 +6,8 @@ NAME_BONUS := checker
 #############################################################################
 #############################################################################
 
-CC := gcc
-CFLAGS ?= -Wextra -Wall -Werror -MMD -MP -g3
+CC := cc
+CFLAGS ?= -Wextra -Wall -Werror -MMD -MP
 CFLAGS += -Wno-unused-function
 LIBFT := ./lib/Libft
 HEADERS := -I./include -I$(LIBFT)/header
@@ -64,6 +64,9 @@ $(NAME_BONUS): $(OBJS_BONUS) $(LIBFT_NAME)
 	@printf $(UP)$(CUT)
 	@$(CC) $(OBJS_BONUS) $(LIBFT_NAME) -o $(NAME_BONUS)
 	@echo $(G)Finished"  "[$(NAME_BONUS)]...$(X)
+
+debug: CFLAGS += -g3
+debug: clean all
 
 #############################################################################
 #############################################################################
