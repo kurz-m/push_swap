@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:55:26 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/10 11:12:23 by work             ###   ########.fr       */
+/*   Updated: 2023/06/14 10:59:32 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "push_swap.h"
 #include "utils.h"
 
+// remove the top node of the list and returns it
 t_circle	*pop(t_oop *self)
 {
 	t_circle	*new_top;
