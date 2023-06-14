@@ -55,7 +55,7 @@ $(OBJ_DIR)/%.o: %.c
 	@printf $(UP)$(CUT)
 
 $(LIBFT_NAME):
-	$(MAKE) -C $(LIBFT)
+	$(MAKE) -C $(LIBFT) -B
 
 bonus: $(NAME_BONUS)
 
@@ -112,7 +112,7 @@ CUT := "\033[K"
 #############################################################################
 
 norm:
-	norminette ./src/
+	@norminette ./src/ && norminette ./include/ && norminette ./lib/Libft/
 
 .PHONY: all clean fclean re bonus
 -include $(OBJS:%.o=%.d)
