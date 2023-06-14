@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 13:30:00 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/09 14:05:14 by work             ###   ########.fr       */
+/*   Updated: 2023/06/14 11:01:13 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ static int	check_duplicate(t_oop **stack, int nb)
 	return (FALSE);
 }
 
+// checks for duplicates, integers, and digits
 static int	valid_input(t_oop **stack, const char *nb)
 {
 	if (check_num(nb) == FALSE)
@@ -61,6 +62,7 @@ static int	valid_input(t_oop **stack, const char *nb)
 	return (TRUE);
 }
 
+// main function to parse the input
 int	parse_input(t_box *box, int argc, char **argv)
 {
 	int		i;

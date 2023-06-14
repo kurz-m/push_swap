@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:57:31 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/10 15:11:35 by work             ###   ########.fr       */
+/*   Updated: 2023/06/14 10:58:01 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ t_circle	*new_node(int data);
 void		construct_box(t_box *box);
 void		box_cleanup(t_box *box);
 
-// cost calculation
+// rotation cost calculation
 int			forward_cost(t_oop *self, int rank, int sort);
 int			reverse_cost(t_oop *self, int rank, int sort);
 

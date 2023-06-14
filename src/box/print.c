@@ -6,13 +6,14 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:54:58 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/10 00:26:31 by work             ###   ########.fr       */
+/*   Updated: 2023/06/14 11:00:29 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 #include "libft.h"
 
+// iterates through the list and prints the data
 void	print(t_oop *self)
 {
 	t_circle	*current;
@@ -26,6 +27,7 @@ void	print(t_oop *self)
 	}
 }
 
+// iterates through the list and prints the rank
 void	print_rank(t_oop *self)
 {
 	t_circle	*current;
@@ -49,6 +51,7 @@ static void	print_optimize(char *prev_cmd, int size)
 	}
 }
 
+// decouples operation printing from executing
 void	print_cmd(char *move)
 {
 	static char		*prev_cmd = NULL;
