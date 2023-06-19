@@ -8,7 +8,6 @@ NAME_BONUS := checker
 
 CC := cc
 CFLAGS ?= -Wextra -Wall -Werror -MMD -MP
-CFLAGS += -Wno-unused-function
 LIBFT := ./lib/Libft
 HEADERS := -I./include -I$(LIBFT)/header
 LIBFT_NAME := $(LIBFT)/lib/libft.a
