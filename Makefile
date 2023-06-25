@@ -54,7 +54,7 @@ $(OBJ_DIR)/%.o: %.c
 	@printf $(UP)$(CUT)
 
 $(LIBFT_NAME):
-	$(MAKE) -C $(LIBFT) -B
+	@$(MAKE) -C $(LIBFT) -B
 
 bonus: $(NAME_BONUS)
 
