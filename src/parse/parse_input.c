@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 13:30:00 by makurz            #+#    #+#             */
-/*   Updated: 2023/06/14 11:01:13 by makurz           ###   ########.fr       */
+/*   Updated: 2023/07/04 12:49:00 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ static int	check_num(const char *nb)
 		i++;
 	if (nb[i] == '-' || nb[i] == '+')
 		i++;
+	if (nb[i] == '\0')
+		return (FALSE);
 	while (nb[i] != '\0')
 	{
 		if (ft_isdigit(nb[i]) == FALSE)
@@ -79,7 +81,7 @@ int	parse_input(t_box *box, int argc, char **argv)
 		while (nbs[++j] != NULL)
 		{
 			box->a->elements++;
-			if (valid_input(&box->a, nbs[j]))
+			if (valid_input(&box->a, nbs[j]) == TRUE)
 				box->a->append(box->a, new_node(ft_atoi(nbs[j])));
 			else
 				parse_error(box, nbs);
