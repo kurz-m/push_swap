@@ -24,8 +24,8 @@
 </h3>
 
 <p align="center">
-    Finished: <br>
-    Grade: %
+    Finished: 06/07/2023<br>
+    Grade: 125%
 </p>
 
 ---
